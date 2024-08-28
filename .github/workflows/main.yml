@@ -1,0 +1,28 @@
+name: Greet people
+run-name: Greeting everyone from list
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+ greet_everyone:
+  runs-on: ubuntu-latest
+  #Here we define our iteration
+  strategy:
+    matrix:
+     people:
+      - Piotr
+      - Seba
+      - Damian
+
+  steps:
+   -name: Call custom action
+    id: custom_
+    uses: antniew/hello-world-action@v1
+    with: 
+        name: ${{ matrix.people }}
+
+    -name: 
+      run: |
+        echo "the naem of is : ${{steps.custom}}"
+      
