@@ -43,7 +43,7 @@ jobs:
     needs: print_last_name
     steps:
       - name: Echo name to console
-      run: |
-        echo "The length of your last name is $ {{ needs.print_last_name.outputs.last_name_length }}"
+        run: |
+          echo "The length of your last name is $ {{ needs.print_last_name.outputs.last_name_length }}"
 
     
