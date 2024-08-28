@@ -17,12 +17,12 @@ jobs:
 
   steps:
    -name: Call custom action
-    id: custom_
-    uses: antniew/hello-world-action@v1
+    id: custom_action
+    uses: antniew/hello-world-action@v2
     with: 
         name: ${{ matrix.people }}
 
     -name: 
       run: |
-        echo "the naem of is : ${{steps.custom}}"
+        echo "the naem of is : ${{steps.custom_aciton.outputs.name_length}}"
       
